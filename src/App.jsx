@@ -37,43 +37,33 @@ function App() {
     password: "SuperSecretPassword123",
     first_name: "Admin",
     last_name: "User",
-    position: "admin"
+    position: "admin",
   };
 
   const context = { user: user };
 
   return (
     <ThemeProvider theme={theme}>
-      {context.user && (
-        <Box sx={{ display: "flex" }}>
-          <CssBaseline />
-          <AppBar open={open} toggleDrawer={toggleDrawer} />
-          <Drawer open={open} toggleDrawer={toggleDrawer} />
-          <BrowserRouter>
+      <CssBaseline />
+      <BrowserRouter>
+        {context.user ? (
+          <Box sx={{ display: "flex" }}>
+            <AppBar open={open} toggleDrawer={toggleDrawer} />
+            <Drawer open={open} toggleDrawer={toggleDrawer} />
             <Routes>
-              {/* Assuming you will have a Login page */}
-              {/* <Route path="/login" element={<LoginPage />} /> */}
               <Route path="/" element={<Dashboard context={context} />} />
-              <Route
-                path="/admin"
-                element={<AdminDashboard context={context} />}
-              />
-              {/* Other routes will go here */}
+              <Route path="/admin" element={<AdminDashboard />} />
+              {/* Other routes */}
             </Routes>
-          </BrowserRouter>
-        </Box>
-      )}
-      {!context.user && (
-        <>
-          <CssBaseline />
-          <BrowserRouter>
-            <Routes>
-              <Route path="/signin" element={<SignIn context={context} />} />
-              <Route path="/signup" element={<SignUp context={context} />} />
-            </Routes>
-          </BrowserRouter>
-        </>
-      )}
+          </Box>
+        ) : (
+          <Routes>
+            <Route path="/signin" element={<SignIn context={context} />} />
+            <Route path="/signup" element={<SignUp context={context} />} />
+            {/* Other routes */}
+          </Routes>
+        )}
+      </BrowserRouter>
     </ThemeProvider>
   );
 }
