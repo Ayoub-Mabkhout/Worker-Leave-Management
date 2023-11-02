@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "startDate": "2023-11-01",
+    "endDate": "2023-11-05",
+    "type": "Vacation",
+    "status": "consumed"
+  },
+  {
+    "id": 2,
+    "startDate": "2023-11-15",
+    "endDate": "2023-11-16",
+    "type": "Sick",
+    "status": "approved"
+  },
+  {
+    "id": 3,
+    "startDate": "2023-12-24",
+    "endDate": "2023-12-26",
+    "type": "Holiday",
+    "status": "pending"
+  },
+  {
+    "id": 4,
+    "startDate": "2023-12-31",
+    "endDate": "2024-01-01",
+    "type": "Holiday",
+    "status": "pending"
+  }
+]

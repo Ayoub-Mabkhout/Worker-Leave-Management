@@ -1,0 +1,20 @@
+/* .App {
+  font-family: sans-serif;
+  text-align: center;
+} */
+
+.App {
+  font-family: "Roboto", sans-serif; /* This is the default font used by Material-UI */
+  margin: 0;
+  background-color: #ffffff; /* Main color as white */
+  color: #333; /* A dark text color for readability */
+}
+
+#page {
+  margin-left: 250px; /* width of the Sidebar */
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
